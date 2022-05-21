@@ -1,16 +1,21 @@
-const http = require('http')
-const server = http.createServer((req,res) => {
+const EventEmitter = require('events')
 
-    if(req.url === '/'){
-        console.log("Yes its the home page");
-        res.end('its homepage')
-    }
-    if(req.url === '/about'){
-        res.end('yes its the about page')
-    }
-    res.end('error page')
-    
+const CostomEvents = new EventEmitter()
+ 
+CostomEvents.on('responce', (name , id)=>{
+    console.log(`its an learning events the name is ${name} and age is ${id} `)
 })
-server.listen(5000, () =>{
-    console.log('its rinning on the port 5000');
+CostomEvents.on('responce', ()=>{
+    console.log('its an learning events')
 })
+CostomEvents.on('responce', ()=>{
+    console.log('its an learning events')
+})
+CostomEvents.on('responce', ()=>{
+    console.log('its an learning events')
+})
+
+CostomEvents.emit('responce', "jhonney", 54)
+
+
+
