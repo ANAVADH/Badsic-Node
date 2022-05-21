@@ -1,0 +1,24 @@
+{
+  "name": "node-basic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "10.js",
+  "scripts": {
+"start": "node App.js"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "loadash": "^1.0.0"
+
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+  
+}
+ 
+
