@@ -1,21 +1,24 @@
-const EventEmitter = require('events')
+const http = require('http')
+const Server = http.createServer((req,res) =>{
+ const url = req.url;
 
-const CostomEvents = new EventEmitter()
- 
-CostomEvents.on('responce', (name , id)=>{
-    console.log(`its an learning events the name is ${name} and age is ${id} `)
-})
-CostomEvents.on('responce', ()=>{
-    console.log('its an learning events')
-})
-CostomEvents.on('responce', ()=>{
-    console.log('its an learning events')
-})
-CostomEvents.on('responce', ()=>{
-    console.log('its an learning events')
-})
+ if(url === '/'){
+    res.writeHead(200, {'content-type' : 'text/html'})
+    res.write('<h1>home page</h1>')
+    res.end()
 
-CostomEvents.emit('responce', "jhonney", 54)
+ }
+ else if(url === '/about'){
+    res.writeHead(200, {'content-type' : 'text/html'})
+    res.write('<h1>About Page</h1>')
+    res.end()
+ }
 
-
+ else{
+    res.writeHead(404, {'content-type' : 'text/html'})
+    res.write('<h1>404 page  not found</h1>')
+    res.end()
+ }
+})
+Server.listen(5000);
 

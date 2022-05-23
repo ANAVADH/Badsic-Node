@@ -1,4 +1,5 @@
 const {readFile ,writeFile }= require('fs');
+const nodemon = require('nodemon');
  readFile("./content/first.txt","utf-8",(err , result)=>{
      if(err){
         
@@ -16,8 +17,9 @@ const {readFile ,writeFile }= require('fs');
                  console.log(err);
                  return;
              }
+             
              console.log(result);
-             can be 
+            
     
              
         
