@@ -14,9 +14,11 @@ app.get('/api/kk/query',(req,res)=>{
          return {name}
     })
    let  SortedArray = [...arr]
-    const {limit,search}= req.query;
+const {limit,search}= req.query;
  if(search){
-        SortedArray = SortedArray.filter((p)=>{
+
+     SortedArray = SortedArray.filter((p)=>{
+
             return p.name.startsWith(search)
          })
      }
@@ -52,4 +54,5 @@ app.get('/api/selected/:first/middle/:second',(req ,res)=>{
 })
 app.listen(5000,()=>{
     console.log("its port 500");
+   
    })
