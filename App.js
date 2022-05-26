@@ -6,7 +6,7 @@ let {world} = require('')
 
 app.use(express.static('./methods-public'))
 app.use(express.urlencoded({extended : false}))
-taht can be done 
+
 
 
     app.get('/api/people',(req,res)=>{
